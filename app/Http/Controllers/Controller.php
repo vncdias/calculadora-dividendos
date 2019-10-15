@@ -15,6 +15,7 @@ class Controller extends BaseController
         'NO_DATA' => 'Nenhum investimento foi enviado para calcular.',
         'NO_TICKER' => 'Nenhum código de negociação (ticker) encontrado.',
         'TICKER_NOT_FOUND' => 'Não encontramos o ticker enviado na nossa base de cálculos.'
+        'NO_AMOUNT' => 'Nenhuma quantidade de ações foi enviada.'
     ];
 
     public function formatError(String $responseCode, Int $statusCode) {
