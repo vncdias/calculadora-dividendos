@@ -10,4 +10,22 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public $responseCodes = [
+        'NO_DATA' => 'Nenhum investimento foi enviado para calcular.',
+        'NO_TICKER' => 'Nenhum código de negociação (ticker) encontrado.',
+        'TICKER_NOT_FOUND' => 'Não encontramos o ticker enviado na nossa base de cálculos.'
+    ];
+
+    public function formatError(String $responseCode, Int $statusCode) {
+
+        $response = [
+            'errors' => [
+                'code' => $responseCode,
+                'message' => $responseCodes[$responseCode] ?? 'Um erro inesperado ocorreu.',
+                'status' => $statusCode,
+            ]
+        ];
+        return response()->json($response, $statusCode);
+    }
 }
