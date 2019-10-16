@@ -9,7 +9,7 @@ $factory->define(Proventos::class, function (Faker $faker) {
     $companhia = factory(\App\Companhia::class)->make();
     $tipos_ativos = ['ON', 'PN'];
     $tipos_proventos = ['DIVIDENDO', 'JCP'];
-    $data_aleatoria = $faker->dateTimeThisDecade($max = 'now', $timezone = null);
+    $data_aleatoria = $faker->dateTimeBetween('-2 years', 'now', null);
     return [
         //'id' => $faker->randomNumber(3),
         'companhia_id' => $companhia->id,
