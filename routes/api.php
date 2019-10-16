@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\API\CalculadoraController as CalculadoraController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 }); */
 
 Route::apiResource('codigos', 'API\CodigosNegociacaoController');
-Route::get('/calcular', 'API\CalculadoraController@calculaProventos');
+Route::post('/calcular', 'API\CalculadoraController@calculaProventos');

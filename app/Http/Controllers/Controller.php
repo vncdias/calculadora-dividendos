@@ -14,7 +14,7 @@ class Controller extends BaseController
     public $responseCodes = [
         'NO_DATA' => 'Nenhum investimento foi enviado para calcular.',
         'NO_TICKER' => 'Nenhum código de negociação (ticker) encontrado.',
-        'TICKER_NOT_FOUND' => 'Não encontramos o ticker enviado na nossa base de cálculos.'
+        'TICKER_NOT_FOUND' => 'Não encontramos o ticker enviado na nossa base de cálculos.',
         'NO_AMOUNT' => 'Nenhuma quantidade de ações foi enviada.'
     ];
 
@@ -23,7 +23,7 @@ class Controller extends BaseController
         $response = [
             'errors' => [
                 'code' => $responseCode,
-                'message' => $responseCodes[$responseCode] ?? 'Um erro inesperado ocorreu.',
+                'message' => $this->responseCodes[$responseCode] ?? 'Um erro inesperado ocorreu.',
                 'status' => $statusCode,
             ]
         ];
