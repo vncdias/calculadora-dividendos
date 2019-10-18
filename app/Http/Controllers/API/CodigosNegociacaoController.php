@@ -15,6 +15,6 @@ class CodigosNegociacaoController extends Controller
      */
     public function index()
     {
-        return \App\CodigosNegociacao::all();
+        return array('data' => \App\CodigosNegociacao::all());
     }
 }

@@ -51,7 +51,7 @@ class CalculadoraController extends Controller
                 $retorno['total'] += round($resultado['total'], 2);
             }
 
-            return response()->json($retorno);
+            return response()->json(array('data' => $retorno));
         }
     }
 
